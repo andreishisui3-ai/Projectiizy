@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT.IIZY — ARCHIVE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-left">
+        <span onclick="navigation('home')">HOME</span>
+        <span onclick="navigation('shop')">SHOP</span>
+    </div>
+    <div class="logo" onclick="navigation('home')">PROJECT.IIZY</div>
+    <div class="nav-right">
+        <span onclick="toggleBag()">BAG (<span id="bag-count">0</span>)</span>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>BE CLEAN.<br>BE IIZY.</h1>
+            <p>SOURCED IN CREMONA — SHIPPED WORLDWIDE</p>
+        </div>
+    </section>
+
+    <section id="shop" class="page">
+        <div class="archive-grid">
+            <div class="item" onclick="viewProduct('ETHERIUM BRACELET', 85.00, 'b1_front.jpg', '925 Sterling Silver.')">
+                <div class="item-img"><img src="b1_front.jpg"></div>
+                <div class="item-details"><span>ETHERIUM BRACELET</span><span>$85.00</span></div>
+            </div>
+            <div class="item" onclick="viewProduct('COLD ESSENCE LINK', 110.00, 'b2_front.jpg', 'Industrial Grade Steel.')">
+                <div class="item-img"><img src="b2_front.jpg"></div>
+                <div class="item-details"><span>COLD ESSENCE LINK</span><span>$110.00</span></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-left"><img id="modal-img" src=""></div>
+        <div class="modal-right">
+            <span class="close-x" onclick="closeModal()">CLOSE</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-price"></p>
+            <div class="desc" id="modal-desc"></div>
+            
+            <div class="selectors">
+                <label>FINISH</label>
+                <div class="option-row" id="color-opts">
+                    <button class="opt active" onclick="setOpt(this)">SILVER</button>
+                    <button class="opt" onclick="setOpt(this)">ONYX</button>
+                </div>
+                <label>SIZE</label>
+                <div class="option-row" id="size-opts">
+                    <button class="opt" onclick="setOpt(this)">18CM</button>
+                    <button class="opt active" onclick="setOpt(this)">20CM</button>
+                </div>
+            </div>
+            <button class="add-to-bag" onclick="addProcess()">ADD TO BAG</button>
+        </div>
+    </div>
+</div>
+
+<div id="side-bag" class="side-bag">
+    <div class="bag-header"><span>YOUR BAG</span><span class="close-x" onclick="toggleBag()">CLOSE</span></div>
+    <div id="bag-items" class="bag-items"></div>
+    <div class="bag-footer">
+        <div class="total-line"><span>TOTAL</span><span id="bag-total">$0.00</span></div>
+        <button class="checkout-btn">CHECKOUT</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<header>
+    <div class="nav-left">
+        <span onclick="navigation('home')">HOME</span>
+        <span onclick="navigation('shop')">SHOP</span>
+    </div>
+    <div class="logo" onclick="navigation('home')">PROJECT.IIZY</div>
+    <div class="nav-right">
+        <span id="auth-btn" onclick="toggleAuth()">ACCOUNT</span>
+        <span onclick="toggleBag()">BAG (<span id="bag-count">0</span>)</span>
+    </div>
+</header>
+
+    <div class="quality-section">
+        <div class="quality-content">
+            <div class="quality-box">
+                <h2>UNCOMPROMISING QUALITY</h2>
+                <p>PROJECT.IIZY IS DEFINED BY ARCHITECTURAL PRECISION. WE SOURCE ONLY PREMIUM 925 STERLING SILVER AND HIGH-GRADE INDUSTRIAL STEEL. EVERY PIECE UNDERGOES RIGOROUS TESTING IN OUR CREMONA ATELIER TO ENSURE STRUCTURAL INTEGRITY AND A COLD, LASTING AESTHETIC.</p>
+            </div>
+            <div class="quality-box">
+                <h2>WHY IIZY?</h2>
+                <p>IN A WORLD OF FAST FASHION, WE CHOOSE PERMANENCE. OUR PIECES ARE NOT ACCESSORIES; THEY ARE ARTIFACTS. BY COMBINING ITALIAN CRAFTSMANSHIP WITH A MINIMALIST BRUTALIST PHILOSOPHY, WE PROVIDE THE MODERN ARCHIVIST WITH TIMELESS GARMENTS THAT EVOLVE WITH THE WEARER.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="auth-modal" class="modal">
+    <div class="modal-content auth-flex">
+        <span class="close-x" onclick="toggleAuth()">CLOSE</span>
+        <div class="auth-container">
+            <h2 id="auth-title">LOGIN</h2>
+            <div class="auth-form">
+                <input type="email" id="email" placeholder="EMAIL">
+                <input type="password" id="pass" placeholder="PASSWORD">
+                <button class="add-to-bag" id="main-auth-btn" onclick="handleAuth()">ENTER THE ARCHIVE</button>
+                <p class="auth-switch" onclick="switchAuth()">DON'T HAVE AN ACCOUNT? CREATE ONE</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="archive-grid">
+    <div class="item" onclick="viewProduct('IIZY CRYSTAL', 95.00, 'https://placehold.co/600x600/080808/FFF?text=CRYSTAL+WHITE', 'https://placehold.co/600x600/080808/FFC0CB?text=CRYSTAL+PINK', 'TEST DESC')">
+        <div class="item-img"><img src="https://placehold.co/600x600/080808/FFF?text=CRYSTAL+WHITE"></div>
+        <div class="item-details"><span>IIZY CRYSTAL</span><span>$95.00</span></div>
+    </div>
+</div>
+</body>
+</html>
